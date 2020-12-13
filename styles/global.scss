@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;900&display=swap');
+@import './vars';
+
+:root {
+  font-size: 112.5%; // Default font-size 18px.
+}
+
+p, a, input, textarea {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: $regular; 
+  font-size: 1rem;
+  color: $dark;
+}
+
+h1, h2, h3, h4, h5, h6  {
+  font-weight: $bold;
+  font-size: 1.222rem; // 22px.
+
+  @media (min-width: 414px) {
+    font-size: 1.555rem; // 28px.
+  }
+
+  @media (min-width: 840px) {
+    font-size: 2.5rem; // 45px.
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 3.055rem; // 55px.
+  }
+}
+
+.highlight {
+  color: $gold;
+}
+
+.bold {
+  font-weight: $bold;
+}

@@ -1,8 +1,9 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { ReactElement } from 'react';
+import '../styles/global.scss';
 
-
-const App = ({ Component, pageProps }: AppProps) => (
+const App = ({ Component, pageProps }: AppProps): ReactElement => (
   <>
     <Head>
       <link
@@ -12,6 +13,7 @@ const App = ({ Component, pageProps }: AppProps) => (
         crossOrigin="anonymous"
       />
     </Head>
+    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
     <Component {...pageProps} />
   </>
 );

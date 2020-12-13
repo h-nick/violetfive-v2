@@ -1,7 +1,10 @@
-const Home = () => {
-  return (
-    <h1>Hello World!</h1>
-  )
-}
+import { ReactElement } from 'react';
+import Hero from '../components/hero/hero';
+
+const Home = (): ReactElement => (
+  <>
+    <Hero />
+  </>
+);
 
 export default Home;
