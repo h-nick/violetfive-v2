@@ -49,9 +49,12 @@
     min-width: 640px;
 
     .navbarButton {
-      color: white;
       border: 3px white solid;
       border-radius: 15px;
+
+      span, path {
+        color: white;
+      }
 
       svg {
         margin-top: -3.5px;

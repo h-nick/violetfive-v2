@@ -5,15 +5,21 @@
   font-size: 112.5%; // Default font-size 18px.
 }
 
-p, a, input, textarea {
+* {
   font-family: 'Exo 2', sans-serif;
+  color: $dark;
+}
+
+p, a, input, textarea, h3, h4, h5, h6 {
   font-weight: $regular; 
   font-size: 1rem;
-  color: $dark;
 }
 
 h1, h2, h3, h4, h5, h6  {
   font-weight: $bold;
+}
+
+h1, h2 {
   font-size: 1.222rem; // 22px.
 
   @media (min-width: 414px) {
