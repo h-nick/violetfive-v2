@@ -5,12 +5,11 @@
   overflow: hidden;
 
   .bgText {
-    opacity: 0.2;
+    opacity: 0.15;
     font-weight: $bold;
     position: absolute;
-    top: 30%;
-    transform: translateY(-50%);
-    font-size: 10rem;
+    top: 45%;
+    font-size: 15rem;
     line-height: 0;
   }
 }
