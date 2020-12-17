@@ -4,15 +4,12 @@
   position: relative;
   overflow: hidden;
 
-  .title {
-    text-decoration: underline;
-  }
-
   .bgText {
-    opacity: 0.3;
+    opacity: 0.2;
     font-weight: $bold;
     position: absolute;
-    top: 50%;
+    top: 30%;
+    transform: translateY(-50%);
     font-size: 10rem;
     line-height: 0;
   }

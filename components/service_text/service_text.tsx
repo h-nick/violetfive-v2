@@ -29,10 +29,10 @@ const ServiceText: FC<AppProps> = ({
   }
   return (
     <div className={clsx(classes.root, right && 'text-sm-right')}>
-      <h3 className={clsx(classes.title, right && 'text-sm-right', 'text-center text-sm-left')}>
+      <h3 className={clsx(right && 'text-sm-right', 'text-center text-sm-left')}>
         {title}
       </h3>
-      <span style={styling} className={classes.bgText}>{bgText}</span>
+      <span style={styling} className={clsx(classes.bgText, 'd-none d-sm-block')}>{bgText}</span>
       {children}
     </div>
   );
