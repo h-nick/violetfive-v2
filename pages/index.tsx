@@ -123,6 +123,47 @@ const Home = (): ReactElement => (
           </Col>
         </Row>
       </Container>
+
+      <Container className={clsx(classes.clients, 'mt-5')}>
+        <h2 className="text-center mb-5">CLIENTS WE&apos;VE WORKED WITH</h2>
+
+        <Row className="justify-content-center">
+          <Col xs={3}>
+            <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
+          </Col>
+          <Col xs={3}>
+            <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
+          </Col>
+          <Col xs={3}>
+            <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
+          </Col>
+        </Row>
+
+        <Row className="justify-content-center mt-3">
+          <Col xs={3}>
+            <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
+          </Col>
+          <Col xs={3}>
+            <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
+          </Col>
+          <Col xs={3}>
+            <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
+          </Col>
+        </Row>
+
+        <Row className="justify-content-center mt-3">
+          <Col xs={3}>
+            <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
+          </Col>
+          <Col xs={3}>
+            <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
+          </Col>
+          <Col xs={3}>
+            <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
+          </Col>
+        </Row>
+      </Container>
+
     </div>
   </div>
 );
