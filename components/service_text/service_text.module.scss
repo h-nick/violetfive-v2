@@ -1,0 +1,19 @@
+@import '../../styles/vars.scss';
+
+.root {
+  position: relative;
+  overflow: hidden;
+
+  .title {
+    text-decoration: underline;
+  }
+
+  .bgText {
+    opacity: 0.3;
+    font-weight: $bold;
+    position: absolute;
+    top: 50%;
+    font-size: 10rem;
+    line-height: 0;
+  }
+}
