@@ -63,7 +63,7 @@ const Hero: FC = () => (
           </h1>
         </Col>
       </Row>
-      <Row className="pt-3 pb-5 mb-5">
+      <Row className="pt-3 mb-10">
         <Col xs={12}>
           <div className={clsx(classes.buttonGroup, 'pt-3')}>
             <Button
@@ -80,7 +80,6 @@ const Hero: FC = () => (
             />
           </div>
         </Col>
-        <Col xs={12} md={2} />
       </Row>
     </Container>
   </div>

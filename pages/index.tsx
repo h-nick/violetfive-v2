@@ -9,7 +9,7 @@ const Home = (): ReactElement => (
   <div className={classes.root}>
     <Hero />
 
-    <div className={clsx(classes.middle, 'mt-5 pt-5 px-2 px-sm-4 m-xl-4')}>
+    <div className={clsx(classes.middle, 'mt-10 px-2 px-sm-4 px-xl-4')}>
       <Container fluid>
         <Row className={clsx(classes.about, 'align-items-center')}>
           <Col xs={12} md={6}>
@@ -60,7 +60,7 @@ const Home = (): ReactElement => (
         </Row>
       </Container>
 
-      <Container className="mt-5 pt-lg-5 px-md-5">
+      <Container className="mt-10 px-md-5">
         <h2 className="text-center">OUR SERVICES</h2>
 
         <Row className="mt-5">
