@@ -1,18 +1,16 @@
 .root {
   overflow: hidden;
-  
+
   .middle {
     h2 {
       text-decoration: underline;
     }
-  
-    .about {
-      @media (min-width: 1920px) {
-        margin: auto;
-        max-width: 1920px;
-      }
+
+    @media (min-width: 1920px) {
+      margin: auto;
+      max-width: 1920px;
     }
-  
+
     .about {
       .content {
         max-width: 30rem;
@@ -36,6 +34,49 @@
       img {
         width: 100%;
         max-width: 200px;
+      }
+    }
+
+    .contact {
+      position: relative;
+      min-height: 50rem;
+
+      .buttonGroup {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    
+        @media (min-width: 480px) {
+          flex-direction: row;
+        }
+      }
+
+      @media (min-width: 1920px) {
+        padding: 0 3rem;
+      }
+
+      img {
+        position: absolute;
+        opacity: 0.15;
+        width: 100%;
+
+        @media (min-width: 576px) {
+          width: 80%;
+        }
+
+        @media (min-width: 768px) {
+          width: 60%;
+          transform: translateY(15%);
+        }
+
+        @media (min-width: 1200px) {
+          opacity: 1;
+          transform: translateY(15%);
+        }
+
+        @media (min-width: 1440px) {
+          transform: translate(0);
+        }
       }
     }
   }

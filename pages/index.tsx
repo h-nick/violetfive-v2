@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import clsx from 'clsx';
 import Hero from '../components/hero/hero';
 import ServiceText from '../components/service_text/service_text';
+import Button from '../components/button/button';
 import classes from './index.module.scss';
 
 const Home = (): ReactElement => (
@@ -164,6 +165,38 @@ const Home = (): ReactElement => (
         </Row>
       </Container>
 
+      <Container className={clsx(classes.contact, 'mt-5')} fluid>
+        <h2 className="text-center mb-sm-5">CONTACT US</h2>
+        <img src="/img/contact.svg" alt="" />
+
+        <Row className="align-items-center">
+          <Col xs={12} md={{ span: 8, offset: 4 }} lg={{ span: 6, offset: 6 }}>
+            <p className="text-sm-right">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor tincidunt
+              viverra. Etiam dictum ex in egestas volutpat. Nunc lectus dolor, hendrerit ac
+              consequat eget, lobortis non erat. Duis mollis neque sed urna iaculis, a maximus
+              dui sagittis. Aenean mollis condimentum augue, quis vulputate sem consequat ac.
+              Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+              turpis egestas.
+            </p>
+
+            <div className={clsx(classes.buttonGroup, 'mt-3 justify-content-sm-end')}>
+              <Button
+                _onClick={() => {}}
+                _onKeyDown={() => {}}
+                _className="mb-3 mr-3"
+                text="CONTACT US"
+              />
+
+              <Button
+                _onClick={() => {}}
+                _onKeyDown={() => {}}
+                text="GET A QUOTE"
+              />
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   </div>
 );
