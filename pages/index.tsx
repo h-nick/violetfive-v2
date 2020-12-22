@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import clsx from 'clsx';
 import Hero from '../components/hero/hero';
+import Footer from '../components/footer/footer';
 import ServiceText from '../components/service_text/service_text';
 import Button from '../components/button/button';
 import classes from './index.module.scss';
@@ -198,6 +199,8 @@ const Home = (): ReactElement => (
         </Row>
       </Container>
     </div>
+
+    <Footer />
   </div>
 );
 

@@ -1,0 +1,45 @@
+@import '../../styles/vars.scss';
+
+.root {
+  margin-top: -5rem;
+  background: url('/img/footer_bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  //position: relative;
+  //overflow: hidden;
+  min-height: 800px;
+
+  @media (min-width: 1920px) {
+    margin-top: 0;
+  }
+
+  .inner {
+    padding-top: 20rem;
+    //position: relative;
+    width: 100%;
+    //top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media (min-width: 3840px) {
+      padding-top: 50rem;
+      padding-bottom: 20rem;
+    }
+
+    .logo {
+      width: 250px;
+    }
+
+    .links {
+      img {
+        width: 3rem;
+      }
+    }
+
+    .copyright {
+      font-size: 0.8rem;
+    }
+  }
+}
