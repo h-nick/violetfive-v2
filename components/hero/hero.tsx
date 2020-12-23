@@ -18,7 +18,9 @@ const Hero: FC = () => (
             'd-block d-lg-flex justify-content-lg-between align-items-lg-center',
           )}
           >
-            <img className={classes.logo} src="/img/logo_white.png" alt="VioletFive logo" />
+            <a href="/" title="Homepage">
+              <img className={classes.logo} src="/img/logo_white.png" alt="VioletFive logo" />
+            </a>
             <div className={clsx(classes.navbarButton, 'd-lg-none d-inline p-2 ml-3')}>
               <Icon icon={threeBars} style={{ color: 'white' }} />
               <span
@@ -31,10 +33,33 @@ const Hero: FC = () => (
                 OPEN NAV
               </span>
             </div>
-            <a href="#_" className="bold d-none d-lg-inline">WHO WE ARE</a>
-            <a href="#_" className="bold d-none d-lg-inline">OUR SERVICES</a>
-            <a href="#_" className="bold d-none d-lg-inline">OUR CLIENTS</a>
-            <a href="#_" className="bold d-none d-lg-inline">CONTACT US</a>
+            <a href="/" title="Homepage" className="bold d-none d-lg-inline">HOMEPAGE</a>
+
+            <a
+              href="https://blog.violetfive.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              title="Blog"
+              className="bold d-none d-lg-inline"
+            >
+              BLOG
+            </a>
+
+            <a
+              href="#_"
+              title="Blog"
+              className="bold d-none d-lg-inline"
+            >
+              CONTACT
+            </a>
+
+            <a
+              href="#_"
+              title="Change language"
+              className="bold d-none d-lg-inline"
+            >
+              SWITCH TO SPANISH
+            </a>
           </div>
         </Col>
       </Row>

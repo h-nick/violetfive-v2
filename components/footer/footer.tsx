@@ -10,14 +10,25 @@ const Footer: FC = () => (
       <h2 className="highlight mt-3">VIOLETFIVE</h2>
 
       <div className={clsx(classes.links, 'mt-3')}>
-        <a href="#_" title="_" className="mr-3">
-          <img src="/img/facebook.svg" alt="" />
+        <a
+          href="https://www.facebook.com/violetfiveweb/"
+          title="VioletFive Facebook"
+          className="mr-3"
+        >
+          <img src="/img/facebook.svg" alt="VioletFive Facebook" />
         </a>
-        <a href="#_" title="_" className="mr-3">
-          <img src="/img/instagram.svg" alt="" />
+        <a
+          href="https://www.instagram.com/violetfiveweb/"
+          title="VioletFive Instagram"
+          className="mr-3"
+        >
+          <img src="/img/instagram.svg" alt="VioletFive Instagram" />
         </a>
-        <a href="#_" title="_">
-          <img src="/img/linkedin.svg" alt="" />
+        <a
+          href="https://www.linkedin.com/company/violetfiveweb/"
+          title="VioletFive LinkedIn"
+        >
+          <img src="/img/linkedin.svg" alt="VioletFive LinkedIn" />
         </a>
       </div>
 
