@@ -1,0 +1,23 @@
+@import '../../styles/vars.scss';
+
+.root {
+  .title {
+    border-left: $purple 10px solid;
+    font-size: 1.5rem;
+  }
+
+  .error {
+    border-color: red;
+  }
+
+  .form {
+    textarea {
+      min-height: 125px;
+    }
+
+    .submit {
+      background-color: $purple;
+      border-color: $purple;
+    }
+  }
+}

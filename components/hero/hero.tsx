@@ -1,12 +1,17 @@
 import clsx from 'clsx';
-import { FC } from 'react';
+import { FC, KeyboardEvent } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 import threeBars from '@iconify/icons-codicon/three-bars';
 import Button from '../button/button';
 import classes from './hero.module.scss';
 
-const Hero: FC = () => (
+interface AppProps {
+  show: () => void,
+  showKey: (e: KeyboardEvent) => void
+}
+
+const Hero: FC<AppProps> = ({ show, showKey }) => (
   <div className={classes.root}>
     <img className={classes.blob} src="/img/top_blob.svg" alt="Background blob design" />
 
@@ -45,13 +50,16 @@ const Hero: FC = () => (
               BLOG
             </a>
 
-            <a
-              href="#_"
+            <div
+              onClick={show}
+              onKeyDown={showKey}
+              role="button"
+              tabIndex={0}
               title="Blog"
               className="bold d-none d-lg-inline"
             >
-              CONTACT
-            </a>
+              <span className={classes.contact}>CONTACT</span>
+            </div>
 
             <a
               href="#_"
@@ -92,14 +100,14 @@ const Hero: FC = () => (
         <Col xs={12}>
           <div className={clsx(classes.buttonGroup, 'pt-3')}>
             <Button
-              _onKeyDown={() => {}}
-              _onClick={() => {}}
+              _onKeyDown={showKey}
+              _onClick={show}
               _className="mb-3 mr-3"
               text="CONTACT US"
             />
             <Button
-              _onKeyDown={() => {}}
-              _onClick={() => {}}
+              _onKeyDown={showKey}
+              _onClick={show}
               _className="mb-3 mr-3"
               text="GET A QUOTE"
             />

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, KeyboardEvent } from 'react';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
 import chevronDoubleRight from '@iconify/icons-bi/chevron-double-right';
@@ -8,7 +8,7 @@ interface AppProps {
   text: string,
   _className?: string,
   _onClick: () => void,
-  _onKeyDown: () => void
+  _onKeyDown: (e: KeyboardEvent) => void
 }
 
 const Button: FC<AppProps> = ({

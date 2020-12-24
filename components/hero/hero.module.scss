@@ -66,7 +66,7 @@
       height: 60px;
     }
 
-    a {
+    a, .contact {
       transition: color 500ms ease;
     }
 
@@ -75,13 +75,13 @@
     }
 
     @media (hover: hover) {
-      a:hover {
+      a:hover, .contact:hover {
         color: $gold;
       }
     }
   }
 
-  h1, a {
+  h1, a, .contact {
     color: white;
   }
 
