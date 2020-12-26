@@ -3,6 +3,7 @@ import {
   Modal, Button, Form, Col,
 } from 'react-bootstrap';
 import clsx from 'clsx';
+import { useIntl } from 'react-intl';
 import { useForm } from 'react-hook-form';
 import classes from './contact.module.scss';
 
@@ -23,6 +24,9 @@ const Contact: FC<AppProps> = ({ close, show }) => {
   const {
     register, handleSubmit, errors,
   } = useForm<Inputs>();
+  const { formatMessage } = useIntl();
+
+  const t = (id: string): string => formatMessage({ id });
 
   const onSubmit = (data: Inputs) => {
     /* eslint-disable no-alert */
@@ -30,10 +34,10 @@ const Contact: FC<AppProps> = ({ close, show }) => {
       method: 'POST',
       body: JSON.stringify(data),
     }).then(() => {
-      alert('Your message was sent successfully.');
+      alert(t('contactFormSent'));
       close();
     }).catch(() => {
-      alert('Your message could not be sent. Try again later.');
+      alert(t('contactFormNotSent'));
       close();
     });
   };
@@ -41,14 +45,14 @@ const Contact: FC<AppProps> = ({ close, show }) => {
   return (
     <Modal show={show} onHide={close} className={classes.root}>
       <Modal.Header>
-        <span className={clsx(classes.title, 'modal-title pl-3')}>Contact Us</span>
+        <span className={clsx(classes.title, 'modal-title pl-3')}>{t('contactFormh')}</span>
       </Modal.Header>
 
       <Modal.Body>
         <Form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
           <Form.Row>
             <Form.Group as={Col} sm="6">
-              <Form.Label>Name (Required)</Form.Label>
+              <Form.Label>{t('contactFormName')}</Form.Label>
               <input
                 className={clsx(errors.name && classes.error, 'form-control')}
                 ref={register({ required: true, minLength: 3 })}
@@ -57,7 +61,7 @@ const Contact: FC<AppProps> = ({ close, show }) => {
             </Form.Group>
 
             <Form.Group as={Col} sm="6">
-              <Form.Label>Email (Required)</Form.Label>
+              <Form.Label>{t('contactFormEmail')}</Form.Label>
               <input
                 className={clsx(errors.email && classes.error, 'form-control')}
                 ref={register({ required: true, minLength: 6 })}
@@ -69,12 +73,12 @@ const Contact: FC<AppProps> = ({ close, show }) => {
 
           <Form.Row>
             <Form.Group as={Col} sm="6">
-              <Form.Label>Organization</Form.Label>
+              <Form.Label>{t('contactFormOrganization')}</Form.Label>
               <Form.Control ref={register} name="organization" />
             </Form.Group>
 
             <Form.Group as={Col} sm="6">
-              <Form.Label>Referral</Form.Label>
+              <Form.Label>{t('contactFormReferral')}</Form.Label>
               <select
                 className={clsx(errors.referral && classes.error, 'form-control')}
                 ref={register({ required: true })}
@@ -85,16 +89,16 @@ const Contact: FC<AppProps> = ({ close, show }) => {
                 <option value="facebook">Facebook</option>
                 <option value="twitter">Twitter</option>
                 <option value="instagram">Instagram</option>
-                <option value="advertisement">Advertisement</option>
-                <option value="friend">Referred by a friend</option>
-                <option value="random">Found you randomly</option>
+                <option value="advertisement">{t('contactFormReferralAdvertisement')}</option>
+                <option value="friend">{t('contactFormReferralFriend')}</option>
+                <option value="random">{t('contactFormReferralRandom')}</option>
               </select>
             </Form.Group>
           </Form.Row>
 
           <Form.Row>
             <Form.Group as={Col}>
-              <Form.Label>Message (Required)</Form.Label>
+              <Form.Label>{t('contactFormMessage')}</Form.Label>
               <textarea
                 ref={register({ required: true, minLength: 5 })}
                 className={clsx(errors.message && classes.error, 'form-control')}
@@ -107,14 +111,14 @@ const Contact: FC<AppProps> = ({ close, show }) => {
 
           <Form.Row>
             <Form.Group as={Col}>
-              <Button className="mr-2" variant="secondary" onClick={close}>Close</Button>
+              <Button className="mr-2" variant="secondary" onClick={close}>{t('contactFormClose')}</Button>
               <Button
                 className={classes.submit}
                 type="submit"
                 variant="primary"
                 onClick={() => {}}
               >
-                Submit
+                {t('contactFormSubmit')}
               </Button>
             </Form.Group>
           </Form.Row>

@@ -1,5 +1,6 @@
 import { ReactElement, useState, KeyboardEvent } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useIntl } from 'react-intl';
 import clsx from 'clsx';
 import Hero from '../components/hero/hero';
 import Footer from '../components/footer/footer';
@@ -10,10 +11,12 @@ import classes from './index.module.scss';
 
 const Home = (): ReactElement => {
   const [contactModal, setContactModal] = useState(false);
+  const { formatMessage } = useIntl();
 
-  const showModal = () => setContactModal(true);
-  const closeModal = () => setContactModal(false);
-  const showModalKey = (e: KeyboardEvent) => {
+  const t = (id: string): string => formatMessage({ id });
+  const showModal = (): void => setContactModal(true);
+  const closeModal = (): void => setContactModal(false);
+  const showModalKey = (e: KeyboardEvent): void => {
     if (e.key === 'Enter') showModal();
   };
 
@@ -29,19 +32,9 @@ const Home = (): ReactElement => {
             <Row className={clsx(classes.about, 'align-items-center')}>
               <Col xs={12} md={6}>
                 <div className={clsx(classes.content, 'm-auto')}>
-                  <h2>WE ARE VIOLETFIVE</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor tincidunt
-                    viverra. Etiam dictum ex in egestas volutpat. Nunc lectus dolor, hendrerit ac
-                    consequat eget, lobortis non erat. Duis mollis neque sed urna iaculis, a maximus
-                    dui sagittis.
-                  </p>
-                  <p>
-                    Aenean mollis condimentum augue, quis vulputate sem consequat ac.
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                    turpis egestas. Donec sed congue ex. Morbi eu lorem sit amet ante rutrum sodales
-                    in non urna.
-                  </p>
+                  <h2>{t('aboutV5h')}</h2>
+                  <p>{t('aboutV5p1')}</p>
+                  <p>{t('aboutV5p2')}</p>
                 </div>
               </Col>
 
@@ -61,86 +54,51 @@ const Home = (): ReactElement => {
 
               <Col xs={12} md={6}>
                 <div className={clsx(classes.content, 'm-auto text-right pt-3 pt-md-0')}>
-                  <h2 className="text-align-right">OUR PROCESS</h2>
-                  <p className="text-align-right">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor tincidunt
-                    viverra. Etiam dictum ex in egestas volutpat. Nunc lectus dolor, hendrerit ac
-                    consequat eget, lobortis non erat. Duis mollis neque sed urna iaculis, a maximus
-                    dui sagittis. Aenean mollis condimentum augue, quis vulputate sem consequat ac.
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                    turpis egestas.
-                  </p>
+                  <h2 className="text-align-right">{t('processh')}</h2>
+                  <p className="text-align-right">{t('processp')}</p>
                 </div>
               </Col>
             </Row>
           </Container>
 
           <Container className="pt-sm-5 px-md-5">
-            <h2 className="text-center">OUR SERVICES</h2>
+            <h2 className="text-center">{t('servicesh')}</h2>
 
             <Row className="mt-5">
               <Col md={10} lg={8}>
-                <ServiceText title="WEB DESIGN & DEVELOPMENT SERVICES" bgText="1">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor tincidunt
-                    viverra. Etiam dictum ex in egestas volutpat. Nunc lectus dolor, hendrerit ac
-                    consequat eget, lobortis non erat. Duis mollis neque sed urna iaculis, a maximus
-                    dui sagittis. Aenean mollis condimentum augue, quis vulputate sem consequat ac.
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                    turpis egestas.
-                  </p>
+                <ServiceText title={t('service1h')} bgText="1">
+                  <p>{t('service1p')}</p>
                 </ServiceText>
               </Col>
             </Row>
 
             <Row className="mt-5">
               <Col md={{ span: 10, offset: 2 }} lg={{ span: 8, offset: 4 }}>
-                <ServiceText title="TECHNICAL & MULTILINGUAL CONTENT WRITING" bgText="2" right>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor tincidunt
-                    viverra. Etiam dictum ex in egestas volutpat. Nunc lectus dolor, hendrerit ac
-                    consequat eget, lobortis non erat. Duis mollis neque sed urna iaculis, a maximus
-                    dui sagittis. Aenean mollis condimentum augue, quis vulputate sem consequat ac.
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                    turpis egestas.
-                  </p>
+                <ServiceText title={t('service2h')} bgText="2" right>
+                  <p>{t('service2p')}</p>
                 </ServiceText>
               </Col>
             </Row>
 
             <Row className="mt-5">
               <Col md={10} lg={8}>
-                <ServiceText title="PROFESSIONAL COPYWRITING & BLOGS" bgText="3">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor tincidunt
-                    viverra. Etiam dictum ex in egestas volutpat. Nunc lectus dolor, hendrerit ac
-                    consequat eget, lobortis non erat. Duis mollis neque sed urna iaculis, a maximus
-                    dui sagittis. Aenean mollis condimentum augue, quis vulputate sem consequat ac.
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                    turpis egestas.
-                  </p>
+                <ServiceText title={t('service3h')} bgText="3">
+                  <p>{t('service3p')}</p>
                 </ServiceText>
               </Col>
             </Row>
 
             <Row className="mt-5">
               <Col md={{ span: 10, offset: 2 }} lg={{ span: 8, offset: 4 }}>
-                <ServiceText title="CREATION OF DIGITAL MAGAZINES & BROCHURES" bgText="4" right>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor tincidunt
-                    viverra. Etiam dictum ex in egestas volutpat. Nunc lectus dolor, hendrerit ac
-                    consequat eget, lobortis non erat. Duis mollis neque sed urna iaculis, a maximus
-                    dui sagittis. Aenean mollis condimentum augue, quis vulputate sem consequat ac.
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                    turpis egestas.
-                  </p>
+                <ServiceText title={t('service4h')} bgText="4" right>
+                  <p>{t('service4p')}</p>
                 </ServiceText>
               </Col>
             </Row>
           </Container>
 
           <Container className={clsx(classes.clients, 'mt-5')}>
-            <h2 className="text-center mb-5">CLIENTS WE&apos;VE WORKED WITH</h2>
+            <h2 className="text-center mb-5">{t('clientsh')}</h2>
 
             <Row className="justify-content-center">
               <Col xs={3}>
@@ -180,32 +138,25 @@ const Home = (): ReactElement => {
           </Container>
 
           <Container className={clsx(classes.contact, 'mt-5')} fluid>
-            <h2 className="text-center mb-sm-5">CONTACT US</h2>
+            <h2 className="text-center mb-sm-5">{t('contacth')}</h2>
             <img src="/img/contact.svg" alt="" />
 
             <Row className="align-items-center">
               <Col xs={12} md={{ span: 8, offset: 4 }} lg={{ span: 6, offset: 6 }}>
-                <p className="text-sm-right">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor tincidunt
-                  viverra. Etiam dictum ex in egestas volutpat. Nunc lectus dolor, hendrerit ac
-                  consequat eget, lobortis non erat. Duis mollis neque sed urna iaculis, a maximus
-                  dui sagittis. Aenean mollis condimentum augue, quis vulputate sem consequat ac.
-                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                  turpis egestas.
-                </p>
+                <p className="text-sm-right">{t('contactp')}</p>
 
                 <div className={clsx(classes.buttonGroup, 'mt-3 justify-content-sm-end')}>
                   <Button
                     _onClick={showModal}
                     _onKeyDown={showModalKey}
                     _className="mb-3 mr-3"
-                    text="CONTACT US"
+                    text={t('button1')}
                   />
 
                   <Button
                     _onClick={showModal}
                     _onKeyDown={showModalKey}
-                    text="GET A QUOTE"
+                    text={t('button2')}
                   />
                 </div>
               </Col>
