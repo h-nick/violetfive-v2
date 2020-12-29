@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import {
   Modal, Button, Form, Col,
 } from 'react-bootstrap';
@@ -21,25 +21,32 @@ interface Inputs {
 }
 
 const Contact: FC<AppProps> = ({ close, show }) => {
-  const {
-    register, handleSubmit, errors,
-  } = useForm<Inputs>();
+  const [submitting, setSubmitting] = useState<boolean>(false);
+  const { register, handleSubmit, errors } = useForm<Inputs>();
   const { formatMessage } = useIntl();
 
   const t = (id: string): string => formatMessage({ id });
 
-  const onSubmit = (data: Inputs) => {
+  const onSubmit = async (data: Inputs) => {
+    setSubmitting(true);
     /* eslint-disable no-alert */
-    fetch('/api/contact', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }).then(() => {
-      alert(t('contactFormSent'));
-      close();
-    }).catch(() => {
-      alert(t('contactFormNotSent'));
-      close();
-    });
+    try {
+      const { ok } = await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify(data),
+      });
+
+      if (!ok) {
+        alert(t('contactFormNotSentServer'));
+      } else {
+        alert(t('contactFormSent'));
+        close();
+      }
+    } catch {
+      alert(t('contactFormNotSentClient'));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -100,7 +107,7 @@ const Contact: FC<AppProps> = ({ close, show }) => {
             <Form.Group as={Col}>
               <Form.Label>{t('contactFormMessage')}</Form.Label>
               <textarea
-                ref={register({ required: true, minLength: 5 })}
+                ref={register({ required: true, minLength: 15 })}
                 className={clsx(errors.message && classes.error, 'form-control')}
                 name="message"
               />
@@ -116,12 +123,47 @@ const Contact: FC<AppProps> = ({ close, show }) => {
                 className={classes.submit}
                 type="submit"
                 variant="primary"
-                onClick={() => {}}
+                disabled={submitting}
               >
-                {t('contactFormSubmit')}
+                {submitting ? t('contactFormSubmitting') : t('contactFormSubmit')}
               </Button>
             </Form.Group>
           </Form.Row>
+
+          {
+            errors && (
+              <>
+                {
+                  errors.name && (
+                    <p className={clsx(classes.errorMsg, 'mb-1')}>
+                      {t('contactErrorName')}
+                    </p>
+                  )
+                }
+                {
+                  errors.email && (
+                    <p className={clsx(classes.errorMsg, 'mb-1')}>
+                      {t('contactErrorEmail')}
+                    </p>
+                  )
+                }
+                {
+                  errors.referral && (
+                    <p className={clsx(classes.errorMsg, 'mb-1')}>
+                      {t('contactErrorReferral')}
+                    </p>
+                  )
+                }
+                {
+                  errors.message && (
+                    <p className={clsx(classes.errorMsg, 'mb-1')}>
+                      {t('contactErrorMessage')}
+                    </p>
+                  )
+                }
+              </>
+            )
+          }
         </Form>
       </Modal.Body>
     </Modal>
