@@ -6,16 +6,19 @@ import classes from './button.module.scss';
 
 interface AppProps {
   text: string,
+  hoverType?: 'standard' | 'color',
   _className?: string,
   _onClick: () => void,
   _onKeyDown: (e: KeyboardEvent) => void
 }
 
 const Button: FC<AppProps> = ({
-  text, _className, _onClick, _onKeyDown,
+  text, hoverType = 'standard', _className, _onClick, _onKeyDown,
 }) => (
   <div
-    className={clsx(classes.root, _className)}
+    className={
+      clsx(classes.root, hoverType === 'standard' ? classes.standard : classes.color, _className)
+    }
     role="button"
     tabIndex={0}
     onClick={_onClick}

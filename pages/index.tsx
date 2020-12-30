@@ -147,6 +147,7 @@ const Home = (): ReactElement => {
 
                 <div className={clsx(classes.buttonGroup, 'mt-3 justify-content-sm-end')}>
                   <Button
+                    hoverType="color"
                     _onClick={showModal}
                     _onKeyDown={showModalKey}
                     _className="mb-3 mr-3"
@@ -154,6 +155,7 @@ const Home = (): ReactElement => {
                   />
 
                   <Button
+                    hoverType="color"
                     _onClick={showModal}
                     _onKeyDown={showModalKey}
                     text={t('button2')}
