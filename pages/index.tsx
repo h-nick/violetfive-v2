@@ -168,31 +168,31 @@ const Home = (): ReactElement => {
           <Container className={clsx(classes.clients, 'mt-5')}>
             <h2 className="text-center mb-5">{t('clientsh')}</h2>
 
-            <Row className="justify-content-center">
+            <Row className="justify-content-center align-items-center">
               <Col xs={3}>
-                <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
+                <img className="d-block mx-auto" src="/img/client1.png" alt="" />
               </Col>
               <Col xs={3}>
-                <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
+                <img className="d-block mx-auto" src="/img/client2.png" alt="" />
+              </Col>
+              <Col xs={3}>
+                <img className="d-block mx-auto" src="/img/client3.png" alt="" />
+              </Col>
+            </Row>
+
+            <Row className="justify-content-center align-items-center mt-3">
+              <Col xs={3}>
+                <img className="d-block mx-auto" src="/img/client4.png" alt="" />
+              </Col>
+              <Col xs={3}>
+                <img className="d-block mx-auto" src="/img/client5.png" alt="" />
               </Col>
               <Col xs={3}>
                 <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
               </Col>
             </Row>
 
-            <Row className="justify-content-center mt-3">
-              <Col xs={3}>
-                <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
-              </Col>
-              <Col xs={3}>
-                <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
-              </Col>
-              <Col xs={3}>
-                <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
-              </Col>
-            </Row>
-
-            <Row className="justify-content-center mt-3">
+            <Row className="justify-content-center align-items-center mt-3">
               <Col xs={3}>
                 <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
               </Col>
