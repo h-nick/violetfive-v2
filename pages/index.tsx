@@ -14,7 +14,14 @@ import useOnScreen from '../hooks/onscreen';
 
 const Home = (): ReactElement => {
   const [contactModal, setContactModal] = useState(false);
+  const [apiIOSupported, setApiIOSupported] = useState(false);
   const { formatMessage } = useIntl();
+
+  useEffect(() => {
+    if ('IntersectionObserver' in window) {
+      setApiIOSupported(true);
+    }
+  });
 
   const offset = '0px 0px 25px 0px';
 
@@ -41,7 +48,7 @@ const Home = (): ReactElement => {
   };
 
   return (
-    <>
+    <div className={clsx(apiIOSupported && classes.animationSupported)}>
       <Contact show={contactModal} close={closeModal} />
 
       <div className={classes.root}>
@@ -229,7 +236,7 @@ const Home = (): ReactElement => {
 
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 
