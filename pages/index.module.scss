@@ -1,3 +1,27 @@
+.animationSupported {
+  .toanim.down.animate, .toanim.left.animate, .toanim.right.animate {
+    transform: translate(0);
+  }
+
+  .toanim {
+    transition: transform 500ms ease;
+  }
+
+  @media (min-width: 992px) {
+    .toanim.right {
+      transform: translateX(50%);
+    }
+  
+    .toanim.left {
+      transform: translateX(-50%);
+    }
+  }
+
+  .toanim.down {
+    transform: translateY(10rem);
+  }
+}
+
 .root {
   overflow: hidden;
 
