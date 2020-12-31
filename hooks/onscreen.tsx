@@ -25,11 +25,15 @@ const useOnScreen = (
       observer?.current.observe(ref.current);
     }
 
-    return () => observer?.current?.unobserve(ref?.current as Element);
+    return () => {
+      if (ref?.current) {
+        observer?.current?.unobserve(ref.current);
+      }
+    };
   }, []);
 
   if (isObservable && ref?.current && !track) {
-    observer.current?.unobserve(ref?.current);
+    observer.current?.unobserve(ref.current);
   }
 
   return isObservable;
