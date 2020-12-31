@@ -23,7 +23,7 @@ const Home = (): ReactElement => {
     }
   });
 
-  const offset = '0px 0px 25px 0px';
+  const offset = '100% 0px 25px 0px';
 
   const image1 = useRef<HTMLImageElement | null>(null);
   const image2 = useRef<HTMLImageElement | null>(null);
