@@ -12,9 +12,10 @@ import classes from './hero.module.scss';
 interface AppProps {
   show: () => void,
   showKey: (e: KeyboardEvent) => void
+  showNavbar: () => void
 }
 
-const Hero: FC<AppProps> = ({ show, showKey }) => {
+const Hero: FC<AppProps> = ({ show, showKey, showNavbar }) => {
   const { locale } = useRouter();
   const { formatMessage } = useIntl();
 
@@ -42,7 +43,7 @@ const Hero: FC<AppProps> = ({ show, showKey }) => {
               <div className={clsx(classes.navbarButton, 'd-lg-none d-inline p-2 ml-3')}>
                 <Icon icon={threeBars} style={{ color: 'white' }} />
                 <span
-                  onClick={() => {}}
+                  onClick={showNavbar}
                   onKeyDown={() => {}}
                   tabIndex={0}
                   className="bold ml-1"

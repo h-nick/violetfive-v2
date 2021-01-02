@@ -11,9 +11,11 @@ import Button from '../components/button/button';
 import Contact from '../components/contact/contact';
 import classes from './index.module.scss';
 import useOnScreen from '../hooks/onscreen';
+import MobileNavbar from '../components/mobile_navbar/mobile_navbar';
 
 const Home = (): ReactElement => {
   const [contactModal, setContactModal] = useState(false);
+  const [mobileNavbarShow, setMobileNavbarShow] = useState(false);
   const [apiIOSupported, setApiIOSupported] = useState(false);
   const { formatMessage } = useIntl();
 
@@ -43,16 +45,20 @@ const Home = (): ReactElement => {
   const t = (id: string): string => formatMessage({ id });
   const showModal = (): void => setContactModal(true);
   const closeModal = (): void => setContactModal(false);
+  const showNavbar = (): void => setMobileNavbarShow(true);
+  const closeNavbar = (): void => setMobileNavbarShow(false);
   const showModalKey = (e: KeyboardEvent): void => {
     if (e.key === 'Enter') showModal();
   };
 
   return (
     <div className={clsx(apiIOSupported && classes.animationSupported)}>
+      <MobileNavbar show={mobileNavbarShow} close={closeNavbar} />
+
       <Contact show={contactModal} close={closeModal} />
 
       <div className={classes.root}>
-        <Hero showKey={showModalKey} show={showModal} />
+        <Hero showKey={showModalKey} show={showModal} showNavbar={showNavbar} />
 
         <div className={clsx(classes.middle, 'mt-10 px-2 px-sm-4 px-xl-4')}>
           <Container className="mb-5" fluid>
