@@ -1,6 +1,7 @@
 import {
   FC, useState, useRef, useEffect,
 } from 'react';
+import Head from 'next/head';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useIntl } from 'react-intl';
 import clsx from 'clsx';
@@ -49,20 +50,33 @@ const Home: FC = () => {
   const closeNavbar = (): void => setMobileNavbarShow(false);
 
   return (
-    <div className={clsx(apiIOSupported && classes.animationSupported)}>
-      <MobileNavbar show={mobileNavbarShow} close={closeNavbar} showContact={showModal} />
+    <>
+      <Head>
+        <title>V5 - VioletFive</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#2b5797" />
+        <meta name="theme-color" content="#5f1f6a" />
+        <meta name="description" content={t('meta')} />
+      </Head>
 
-      <Contact show={contactModal} close={closeModal} />
+      <div className={clsx(apiIOSupported && classes.animationSupported)}>
+        <MobileNavbar show={mobileNavbarShow} close={closeNavbar} showContact={showModal} />
 
-      <div className={classes.root}>
-        <Hero show={showModal} showNavbar={showNavbar} />
+        <Contact show={contactModal} close={closeModal} />
 
-        <div className={clsx(classes.middle, 'mt-10 px-2 px-sm-4 px-xl-4')}>
-          <Container className="mb-5" fluid>
-            <Row className={clsx(classes.about, 'align-items-center')}>
-              <Col xs={12} md={6}>
-                <div
-                  className={
+        <div className={classes.root}>
+          <Hero show={showModal} showNavbar={showNavbar} />
+
+          <div className={clsx(classes.middle, 'mt-10 px-2 px-sm-4 px-xl-4')}>
+            <Container className="mb-5" fluid>
+              <Row className={clsx(classes.about, 'align-items-center')}>
+                <Col xs={12} md={6}>
+                  <div
+                    className={
                     clsx(
                       classes.content,
                       classes.toanim,
@@ -70,17 +84,17 @@ const Home: FC = () => {
                       textIsOnScreen[0] && classes.animate, 'm-auto',
                     )
                   }
-                  ref={text1}
-                >
-                  <h2>{t('aboutV5h')}</h2>
-                  <p>{t('aboutV5p1')}</p>
-                  <p>{t('aboutV5p2')}</p>
-                </div>
-              </Col>
+                    ref={text1}
+                  >
+                    <h2>{t('aboutV5h')}</h2>
+                    <p>{t('aboutV5p1')}</p>
+                    <p>{t('aboutV5p2')}</p>
+                  </div>
+                </Col>
 
-              <Col xs={12} md={6}>
-                <img
-                  className={
+                <Col xs={12} md={6}>
+                  <img
+                    className={
                     clsx(
                       classes.toanim,
                       classes.right,
@@ -88,17 +102,17 @@ const Home: FC = () => {
                       'm-auto d-none d-md-block',
                     )
                   }
-                  src="/img/phones_mockup.png"
-                  alt=""
-                  ref={image1}
-                />
-              </Col>
-            </Row>
+                    src="/img/phones_mockup.png"
+                    alt=""
+                    ref={image1}
+                  />
+                </Col>
+              </Row>
 
-            <Row className={clsx(classes.about, 'align-items-center pt-4 pt-sm-5 mt-md-5 pt-md-5')}>
-              <Col xs={12} md={6}>
-                <img
-                  className={
+              <Row className={clsx(classes.about, 'align-items-center pt-4 pt-sm-5 mt-md-5 pt-md-5')}>
+                <Col xs={12} md={6}>
+                  <img
+                    className={
                     clsx(
                       classes.toanim,
                       classes.down,
@@ -106,15 +120,15 @@ const Home: FC = () => {
                       'm-auto d-none d-sm-block pb-5 pb-md-0',
                     )
                   }
-                  src="/img/hero_mockups.png"
-                  alt=""
-                  ref={image2}
-                />
-              </Col>
+                    src="/img/hero_mockups.png"
+                    alt=""
+                    ref={image2}
+                  />
+                </Col>
 
-              <Col xs={12} md={6}>
-                <div
-                  className={
+                <Col xs={12} md={6}>
+                  <div
+                    className={
                     clsx(
                       classes.content,
                       classes.toanim,
@@ -123,109 +137,110 @@ const Home: FC = () => {
                       'm-auto text-right pt-3 pt-md-0',
                     )
                   }
-                  ref={text2}
-                >
-                  <h2 className="text-align-right">{t('processh')}</h2>
-                  <p className="text-align-right">{t('processp')}</p>
-                </div>
-              </Col>
-            </Row>
-          </Container>
+                    ref={text2}
+                  >
+                    <h2 className="text-align-right">{t('processh')}</h2>
+                    <p className="text-align-right">{t('processp')}</p>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
 
-          <Container className="pt-sm-5 px-md-5">
-            <h2 className="text-center">{t('servicesh')}</h2>
+            <Container className="pt-sm-5 px-md-5">
+              <h2 className="text-center">{t('servicesh')}</h2>
 
-            <Row className="mt-5">
-              <Col md={10} lg={8}>
-                <ServiceText title={t('service1h')} bgText="1">
-                  <p>{t('service1p')}</p>
-                </ServiceText>
-              </Col>
-            </Row>
+              <Row className="mt-5">
+                <Col md={10} lg={8}>
+                  <ServiceText title={t('service1h')} bgText="1">
+                    <p>{t('service1p')}</p>
+                  </ServiceText>
+                </Col>
+              </Row>
 
-            <Row className="mt-5">
-              <Col md={{ span: 10, offset: 2 }} lg={{ span: 8, offset: 4 }}>
-                <ServiceText title={t('service2h')} bgText="2" right>
-                  <p>{t('service2p')}</p>
-                </ServiceText>
-              </Col>
-            </Row>
+              <Row className="mt-5">
+                <Col md={{ span: 10, offset: 2 }} lg={{ span: 8, offset: 4 }}>
+                  <ServiceText title={t('service2h')} bgText="2" right>
+                    <p>{t('service2p')}</p>
+                  </ServiceText>
+                </Col>
+              </Row>
 
-            <Row className="mt-5">
-              <Col md={10} lg={8}>
-                <ServiceText title={t('service3h')} bgText="3">
-                  <p>{t('service3p')}</p>
-                </ServiceText>
-              </Col>
-            </Row>
+              <Row className="mt-5">
+                <Col md={10} lg={8}>
+                  <ServiceText title={t('service3h')} bgText="3">
+                    <p>{t('service3p')}</p>
+                  </ServiceText>
+                </Col>
+              </Row>
 
-            <Row className="mt-5">
-              <Col md={{ span: 10, offset: 2 }} lg={{ span: 8, offset: 4 }}>
-                <ServiceText title={t('service4h')} bgText="4" right>
-                  <p>{t('service4p')}</p>
-                </ServiceText>
-              </Col>
-            </Row>
-          </Container>
+              <Row className="mt-5">
+                <Col md={{ span: 10, offset: 2 }} lg={{ span: 8, offset: 4 }}>
+                  <ServiceText title={t('service4h')} bgText="4" right>
+                    <p>{t('service4p')}</p>
+                  </ServiceText>
+                </Col>
+              </Row>
+            </Container>
 
-          <Container className={clsx(classes.clients, 'mt-5')}>
-            <h2 className="text-center mb-5">{t('clientsh')}</h2>
+            <Container className={clsx(classes.clients, 'mt-5')}>
+              <h2 className="text-center mb-5">{t('clientsh')}</h2>
 
-            <Row className="justify-content-center align-items-center">
-              <Col xs={3}>
-                <img className="d-block mx-auto" src="/img/client1.png" alt="" />
-              </Col>
-              <Col xs={3}>
-                <img className="d-block mx-auto" src="/img/client2.png" alt="" />
-              </Col>
-              <Col xs={3}>
-                <img className="d-block mx-auto" src="/img/client3.png" alt="" />
-              </Col>
-            </Row>
+              <Row className="justify-content-center align-items-center">
+                <Col xs={3}>
+                  <img className="d-block mx-auto" src="/img/client1.png" alt="" />
+                </Col>
+                <Col xs={3}>
+                  <img className="d-block mx-auto" src="/img/client2.png" alt="" />
+                </Col>
+                <Col xs={3}>
+                  <img className="d-block mx-auto" src="/img/client3.png" alt="" />
+                </Col>
+              </Row>
 
-            <Row className="justify-content-center align-items-center mt-3">
-              <Col xs={3}>
-                <img className="d-block mx-auto" src="/img/client4.png" alt="" />
-              </Col>
-              <Col xs={3}>
-                <img className="d-block mx-auto" src="/img/client5.png" alt="" />
-              </Col>
-              <Col xs={3}>
-                <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
-              </Col>
-            </Row>
-          </Container>
+              <Row className="justify-content-center align-items-center mt-3">
+                <Col xs={3}>
+                  <img className="d-block mx-auto" src="/img/client4.png" alt="" />
+                </Col>
+                <Col xs={3}>
+                  <img className="d-block mx-auto" src="/img/client5.png" alt="" />
+                </Col>
+                <Col xs={3}>
+                  <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
+                </Col>
+              </Row>
+            </Container>
 
-          <Container className={clsx(classes.contact, 'mt-5')} fluid>
-            <h2 className="text-center mb-sm-5">{t('contacth')}</h2>
-            <img src="/img/contact.svg" alt="" />
+            <Container className={clsx(classes.contact, 'mt-5')} fluid>
+              <h2 className="text-center mb-sm-5">{t('contacth')}</h2>
+              <img src="/img/contact.svg" alt="" />
 
-            <Row className="align-items-center">
-              <Col xs={12} md={{ span: 8, offset: 4 }} lg={{ span: 6, offset: 6 }}>
-                <p className="text-sm-right">{t('contactp')}</p>
+              <Row className="align-items-center">
+                <Col xs={12} md={{ span: 8, offset: 4 }} lg={{ span: 6, offset: 6 }}>
+                  <p className="text-sm-right">{t('contactp')}</p>
 
-                <div className={clsx(classes.buttonGroup, 'mt-3 justify-content-sm-end')}>
-                  <Button
-                    hoverType="color"
-                    _onClick={showModal}
-                    _className="mb-3 mr-3"
-                    text={t('button1')}
-                  />
+                  <div className={clsx(classes.buttonGroup, 'mt-3 justify-content-sm-end')}>
+                    <Button
+                      hoverType="color"
+                      _onClick={showModal}
+                      _className="mb-3 mr-3"
+                      text={t('button1')}
+                    />
 
-                  <Button
-                    hoverType="color"
-                    _onClick={showModal}
-                    text={t('button2')}
-                  />
-                </div>
-              </Col>
-            </Row>
-          </Container>
+                    <Button
+                      hoverType="color"
+                      _onClick={showModal}
+                      text={t('button2')}
+                    />
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+
+          <Footer />
         </div>
-
-        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 

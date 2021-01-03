@@ -43,4 +43,5 @@ export default {
   contactErrorEmail: 'The Email is required and must be least 6 characters long.',
   contactErrorReferral: 'The Referral is required.',
   contactErrorMessage: 'The Message is required and must be at least 15 characters long.',
+  meta: 'Improve your online presence and increase your conversions through custom-made websites and high quality digital content. Contact us now!',
 };
