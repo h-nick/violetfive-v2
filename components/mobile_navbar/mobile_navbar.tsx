@@ -2,13 +2,15 @@ import { FC } from 'react';
 import clsx from 'clsx';
 import { Modal } from 'react-bootstrap';
 import classes from './mobile_navbar.module.scss';
+import NavLinks from '../nav_links/nav_links';
 
 interface AppProps {
   show: boolean,
+  showContact: () => void
   close: () => void
 }
 
-const MobileNavbar: FC<AppProps> = ({ close, show = false }) => (
+const MobileNavbar: FC<AppProps> = ({ close, show = false, showContact }) => (
   <div className={classes.root}>
     <Modal
       show={show}
@@ -23,40 +25,18 @@ const MobileNavbar: FC<AppProps> = ({ close, show = false }) => (
           <img src="/img/logo.png" alt="VioletFive Logo" />
         </div>
 
-        <a
-          className={clsx(classes.link, 'text-center bold highlight mb-4')}
-          href="#_"
-          title=""
-        >
-          TEST
-        </a>
-        <a
-          className={clsx(classes.link, 'text-center bold highlight mb-4')}
-          href="#_"
-          title=""
-        >
-          TESTLINK
-        </a>
-        <a
-          className={clsx(classes.link, 'text-center bold highlight mb-4')}
-          href="#_"
-          title=""
-        >
-          TEST
-        </a>
-        <a
-          className={clsx(classes.link, 'text-center bold highlight mb-4')}
-          href="#_"
-          title=""
-        >
-          TESTLINK
-        </a>
+        <NavLinks
+          show={showContact}
+          _className={clsx(classes.links, 'text-center bold highlight mb-4')}
+        />
+
         <button
-          className={clsx(classes.link, 'text-center bold highlight')}
+          className={clsx(classes.closeButton, 'text-center bold highlight button-reset')}
           onClick={close}
           type="button"
+          aria-label="Close Navigation Bar"
         >
-          TEST
+          X
         </button>
       </div>
     </Modal>

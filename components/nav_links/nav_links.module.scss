@@ -21,42 +21,28 @@
     .navHeader {
       img {
         max-width: 150px;
-        margin: auto;
-        display: block;
       }
     }
 
-    .closeButton {
-      border: 3px $gold solid;
-      border-radius: 100%;
-      padding: 0.4rem 0.8rem;
-      margin: auto;
-      display: block;
+    button.link {
+      background: none;
+      border: none;
+      width: 100%;  
     }
 
-    .links {
+    .link {
       display: block;
       font-size: 1.222rem;
     }
 
-    .links, button.links {
+    button.link, .link {
       border-bottom: 3px $gold solid;
       transition: all 500ms ease;
-      width: 100%;
 
-      @media (hover: hover) {
-        &:hover {
-          color: white;
-          border-color: white;
-          text-decoration: none;
-        }
-      }
-
-      @media (hover: none) {
-        &:hover {
-          color: $gold;
-          text-decoration: none;
-        }
+      &:hover {
+        color: white;
+        border-color: white;
+        text-decoration: none;
       }
     }
   }

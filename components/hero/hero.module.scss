@@ -66,22 +66,27 @@
       height: 60px;
     }
 
-    a, .contact {
+    .links {
       transition: color 500ms ease;
-    }
+      color: white;
 
-    a:hover {
-      text-decoration: none;
-    }
+      @media (hover: hover) {
+        &:hover {
+          color: $gold;
+          text-decoration: none;
+        }
+      }
 
-    @media (hover: hover) {
-      a:hover, .contact:hover {
-        color: $gold;
+      @media (hover: none) {
+        &:hover {
+          color: white;
+          text-decoration: none;
+        }
       }
     }
   }
 
-  h1, a, .contact {
+  h1 {
     color: white;
   }
 

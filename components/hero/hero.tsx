@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import threeBars from '@iconify/icons-codicon/three-bars';
 import Button from '../button/button';
 import classes from './hero.module.scss';
+import NavLinks from '../nav_links/nav_links';
 
 interface AppProps {
   show: () => void,
@@ -53,38 +54,7 @@ const Hero: FC<AppProps> = ({ show, showKey, showNavbar }) => {
                 </span>
               </div>
 
-              <a href="/" title={t('navHomet')} className="bold d-none d-lg-inline">{t('navHome')}</a>
-
-              <a
-                href="https://blog.violetfive.com"
-                target="_blank"
-                rel="noreferrer noopener"
-                title="Blog"
-                className="bold d-none d-lg-inline"
-              >
-                BLOG
-              </a>
-
-              <div
-                onClick={show}
-                onKeyDown={showKey}
-                role="button"
-                tabIndex={0}
-                title={t('navContactt')}
-                className="bold d-none d-lg-inline"
-              >
-                <span className={classes.contact}>{t('contacth')}</span>
-              </div>
-
-              <Link href={toLocaleHref} locale={toLocale}>
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a
-                  title={t('navLangt')}
-                  className="bold d-none d-lg-inline"
-                >
-                  {t('navLang')}
-                </a>
-              </Link>
+              <NavLinks show={show} _className={clsx(classes.links, 'bold d-none d-lg-inline')} />
             </div>
           </Col>
         </Row>

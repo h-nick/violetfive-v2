@@ -53,7 +53,7 @@ const Home = (): ReactElement => {
 
   return (
     <div className={clsx(apiIOSupported && classes.animationSupported)}>
-      <MobileNavbar show={mobileNavbarShow} close={closeNavbar} />
+      <MobileNavbar show={mobileNavbarShow} close={closeNavbar} showContact={showModal} />
 
       <Contact show={contactModal} close={closeModal} />
 
