@@ -7,7 +7,7 @@ import { useIntl } from 'react-intl';
 import { useForm } from 'react-hook-form';
 import classes from './contact.module.scss';
 
-interface AppProps {
+interface FCProps {
   close: () => void,
   show: boolean
 }
@@ -20,7 +20,7 @@ interface Inputs {
   message: string
 }
 
-const Contact: FC<AppProps> = ({ close, show }) => {
+const Contact: FC<FCProps> = ({ close, show }) => {
   const [submitting, setSubmitting] = useState<boolean>(false);
   const { register, handleSubmit, errors } = useForm<Inputs>();
   const { formatMessage } = useIntl();

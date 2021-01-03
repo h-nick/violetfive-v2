@@ -4,14 +4,14 @@ import clsx from 'clsx';
 import chevronDoubleRight from '@iconify/icons-bi/chevron-double-right';
 import classes from './button.module.scss';
 
-interface AppProps {
+interface FCProps {
   text: string,
   hoverType?: 'standard' | 'color',
   _className?: string,
   _onClick: () => void,
 }
 
-const Button: FC<AppProps> = ({
+const Button: FC<FCProps> = ({
   text, hoverType = 'standard', _className, _onClick,
 }) => (
   <button

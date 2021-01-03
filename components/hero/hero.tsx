@@ -8,12 +8,12 @@ import Button from '../button/button';
 import classes from './hero.module.scss';
 import NavLinks from '../nav_links/nav_links';
 
-interface AppProps {
+interface FCProps {
   show: () => void,
   showNavbar: () => void
 }
 
-const Hero: FC<AppProps> = ({ show, showNavbar }) => {
+const Hero: FC<FCProps> = ({ show, showNavbar }) => {
   const { formatMessage } = useIntl();
 
   const t = (id: string): string => formatMessage({ id });

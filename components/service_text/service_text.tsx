@@ -2,7 +2,7 @@ import { FC, ReactChild } from 'react';
 import clsx from 'clsx';
 import classes from './service_text.module.scss';
 
-interface AppProps {
+interface FCProps {
   children: ReactChild,
   bgText: string,
   title: string,
@@ -15,17 +15,15 @@ interface StyleProps {
   right?: string
 }
 
-const ServiceText: FC<AppProps> = ({
+const ServiceText: FC<FCProps> = ({
   children, bgText, title, right = false,
 }) => {
   const styling: StyleProps = {};
 
   if (right) {
     styling.right = '0';
-    // styling.transform = 'translate(-50%, -50%)';
   } else {
     styling.left = '0';
-    // styling.transform = 'translate(50%, -50%)';
   }
   return (
     <div className={clsx(classes.root, right && 'text-sm-right')}>

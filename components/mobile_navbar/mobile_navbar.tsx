@@ -4,13 +4,13 @@ import { Modal } from 'react-bootstrap';
 import classes from './mobile_navbar.module.scss';
 import NavLinks from '../nav_links/nav_links';
 
-interface AppProps {
+interface FCProps {
   show: boolean,
   showContact: () => void
   close: () => void
 }
 
-const MobileNavbar: FC<AppProps> = ({ close, show = false, showContact }) => (
+const MobileNavbar: FC<FCProps> = ({ close, show = false, showContact }) => (
   <div className={classes.root}>
     <Modal
       show={show}

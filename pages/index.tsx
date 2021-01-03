@@ -1,5 +1,5 @@
 import {
-  ReactElement, useState, useRef, useEffect,
+  FC, useState, useRef, useEffect,
 } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useIntl } from 'react-intl';
@@ -13,10 +13,10 @@ import classes from './index.module.scss';
 import useOnScreen from '../hooks/onscreen';
 import MobileNavbar from '../components/mobile_navbar/mobile_navbar';
 
-const Home = (): ReactElement => {
-  const [contactModal, setContactModal] = useState(false);
-  const [mobileNavbarShow, setMobileNavbarShow] = useState(false);
-  const [apiIOSupported, setApiIOSupported] = useState(false);
+const Home: FC = () => {
+  const [contactModal, setContactModal] = useState<boolean>(false);
+  const [mobileNavbarShow, setMobileNavbarShow] = useState<boolean>(false);
+  const [apiIOSupported, setApiIOSupported] = useState<boolean>(false);
   const { formatMessage } = useIntl();
 
   useEffect(() => {
@@ -189,18 +189,6 @@ const Home = (): ReactElement => {
               </Col>
               <Col xs={3}>
                 <img className="d-block mx-auto" src="/img/client5.png" alt="" />
-              </Col>
-              <Col xs={3}>
-                <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
-              </Col>
-            </Row>
-
-            <Row className="justify-content-center align-items-center mt-3">
-              <Col xs={3}>
-                <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
-              </Col>
-              <Col xs={3}>
-                <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
               </Col>
               <Col xs={3}>
                 <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />

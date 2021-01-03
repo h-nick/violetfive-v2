@@ -3,14 +3,13 @@ import { useIntl } from 'react-intl';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
-import classes from './nav_links.module.scss';
 
-interface AppProps {
+interface FCProps {
   _className?: string,
   show: () => void
 }
 
-const NavLinks: FC<AppProps> = ({ _className, show }) => {
+const NavLinks: FC<FCProps> = ({ _className, show }) => {
   const { locale } = useRouter();
   const { formatMessage } = useIntl();
 
