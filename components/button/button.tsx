@@ -1,4 +1,4 @@
-import { FC, KeyboardEvent } from 'react';
+import { FC } from 'react';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
 import chevronDoubleRight from '@iconify/icons-bi/chevron-double-right';
@@ -9,26 +9,27 @@ interface AppProps {
   hoverType?: 'standard' | 'color',
   _className?: string,
   _onClick: () => void,
-  _onKeyDown: (e: KeyboardEvent) => void
 }
 
 const Button: FC<AppProps> = ({
-  text, hoverType = 'standard', _className, _onClick, _onKeyDown,
+  text, hoverType = 'standard', _className, _onClick,
 }) => (
-  <div
+  <button
     className={
-      clsx(classes.root, hoverType === 'standard' ? classes.standard : classes.color, _className)
+      clsx(
+        classes.root, hoverType === 'standard' ? classes.standard : classes.color,
+        _className,
+        'button-reset',
+      )
     }
-    role="button"
-    tabIndex={0}
+    type="button"
     onClick={_onClick}
-    onKeyDown={_onKeyDown}
   >
     <div className={classes.inner}>
       <span className="bold mr-2">{ text }</span>
       <Icon icon={chevronDoubleRight} />
     </div>
-  </div>
+  </button>
 );
 
 export default Button;

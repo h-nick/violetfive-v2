@@ -1,10 +1,8 @@
 import clsx from 'clsx';
-import { FC, KeyboardEvent } from 'react';
+import { FC } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 import { useIntl } from 'react-intl';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import threeBars from '@iconify/icons-codicon/three-bars';
 import Button from '../button/button';
 import classes from './hero.module.scss';
@@ -12,18 +10,13 @@ import NavLinks from '../nav_links/nav_links';
 
 interface AppProps {
   show: () => void,
-  showKey: (e: KeyboardEvent) => void
   showNavbar: () => void
 }
 
-const Hero: FC<AppProps> = ({ show, showKey, showNavbar }) => {
-  const { locale } = useRouter();
+const Hero: FC<AppProps> = ({ show, showNavbar }) => {
   const { formatMessage } = useIntl();
 
   const t = (id: string): string => formatMessage({ id });
-
-  const toLocale: string = locale === 'en' ? 'es' : 'en';
-  const toLocaleHref: string = locale === 'en' ? '/es' : '/';
 
   return (
     <div className={classes.root}>
@@ -41,18 +34,16 @@ const Hero: FC<AppProps> = ({ show, showKey, showNavbar }) => {
                 <img className={classes.logo} src="/img/logo_white.png" alt="VioletFive logo" />
               </a>
 
-              <div className={clsx(classes.navbarButton, 'd-lg-none d-inline p-2 ml-3')}>
+              <button
+                className={clsx(classes.navbarButton, 'd-lg-none d-inline p-2 ml-3 button-reset')}
+                type="button"
+                onClick={showNavbar}
+              >
                 <Icon icon={threeBars} style={{ color: 'white' }} />
-                <span
-                  onClick={showNavbar}
-                  onKeyDown={() => {}}
-                  tabIndex={0}
-                  className="bold ml-1"
-                  role="button"
-                >
+                <span className="bold ml-1">
                   {t('navDrawer')}
                 </span>
-              </div>
+              </button>
 
               <NavLinks show={show} _className={clsx(classes.links, 'bold d-none d-lg-inline')} />
             </div>
@@ -87,13 +78,11 @@ const Hero: FC<AppProps> = ({ show, showKey, showNavbar }) => {
           <Col xs={12}>
             <div className={clsx(classes.buttonGroup, 'pt-3')}>
               <Button
-                _onKeyDown={showKey}
                 _onClick={show}
                 _className="mb-3 mr-3"
                 text={t('button1')}
               />
               <Button
-                _onKeyDown={showKey}
                 _onClick={show}
                 _className="mb-3 mr-3"
                 text={t('button2')}

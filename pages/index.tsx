@@ -1,5 +1,5 @@
 import {
-  ReactElement, useState, KeyboardEvent, useRef, useEffect,
+  ReactElement, useState, useRef, useEffect,
 } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useIntl } from 'react-intl';
@@ -47,9 +47,6 @@ const Home = (): ReactElement => {
   const closeModal = (): void => setContactModal(false);
   const showNavbar = (): void => setMobileNavbarShow(true);
   const closeNavbar = (): void => setMobileNavbarShow(false);
-  const showModalKey = (e: KeyboardEvent): void => {
-    if (e.key === 'Enter') showModal();
-  };
 
   return (
     <div className={clsx(apiIOSupported && classes.animationSupported)}>
@@ -58,7 +55,7 @@ const Home = (): ReactElement => {
       <Contact show={contactModal} close={closeModal} />
 
       <div className={classes.root}>
-        <Hero showKey={showModalKey} show={showModal} showNavbar={showNavbar} />
+        <Hero show={showModal} showNavbar={showNavbar} />
 
         <div className={clsx(classes.middle, 'mt-10 px-2 px-sm-4 px-xl-4')}>
           <Container className="mb-5" fluid>
@@ -223,7 +220,6 @@ const Home = (): ReactElement => {
                   <Button
                     hoverType="color"
                     _onClick={showModal}
-                    _onKeyDown={showModalKey}
                     _className="mb-3 mr-3"
                     text={t('button1')}
                   />
@@ -231,7 +227,6 @@ const Home = (): ReactElement => {
                   <Button
                     hoverType="color"
                     _onClick={showModal}
-                    _onKeyDown={showModalKey}
                     text={t('button2')}
                   />
                 </div>
