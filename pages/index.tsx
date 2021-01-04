@@ -205,7 +205,19 @@ const Home: FC = () => {
                   <img className="d-block mx-auto" src="/img/client5.png" alt="" />
                 </Col>
                 <Col xs={3}>
-                  <img className="d-block mx-auto" src="https://via.placeholder.com/150" alt="" />
+                  <img className="d-block mx-auto" src="/img/client6.png" alt="" />
+                </Col>
+              </Row>
+
+              <Row className="justify-content-center align-items-center mt-3">
+                <Col xs={3}>
+                  <img className="d-block mx-auto" src="/img/client7.png" alt="" />
+                </Col>
+                <Col xs={3}>
+                  <img className="d-block mx-auto" src="/img/client8.png" alt="" />
+                </Col>
+                <Col xs={3}>
+                  <img className="d-block mx-auto" src="/img/client9.png" alt="" />
                 </Col>
               </Row>
             </Container>
