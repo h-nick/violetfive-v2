@@ -23,7 +23,7 @@ const ServiceText: FC<FCProps> = ({
   if (right) {
     styling.right = '0';
   } else {
-    styling.left = '0';
+    styling.left = '-2%';
   }
   return (
     <div className={clsx(classes.root, right && 'text-sm-right')}>
