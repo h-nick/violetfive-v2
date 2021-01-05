@@ -51,26 +51,26 @@ const Hero: FC<FCProps> = ({ show, showNavbar }) => {
         </Row>
         <Row className="mt-5">
           <Col>
-            <h1 className={classes.firstText}>AT V5 WE:</h1>
+            <h1 className={classes.firstText}>{t('heroTop')}</h1>
             <h1>
-              <span className="highlight">DESIGN</span>
+              <span className="highlight">{t('heroDesign')}</span>
               {' '}
-              WEBSITES
+              {t('heroWebsites')}
             </h1>
             <h1>
-              <span className="highlight">BUILD</span>
+              <span className="highlight">{t('heroBuild')}</span>
               {' '}
-              APPLICATIONS
+              {t('heroApplications')}
             </h1>
             <h1>
-              <span className="highlight">WRITE</span>
+              <span className="highlight">{t('heroWrite')}</span>
               {' '}
-              WEB CONTENT
+              {t('heroWebContent')}
             </h1>
             <h1>
-              <span className="highlight">CREATE</span>
+              <span className="highlight">{t('heroCreate')}</span>
               {' '}
-              AWESOME BLOGS
+              {t('heroAwesomeBlogs')}
             </h1>
           </Col>
         </Row>

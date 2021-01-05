@@ -44,4 +44,13 @@ export default {
   contactErrorReferral: 'The Referral is required.',
   contactErrorMessage: 'The Message is required and must be at least 15 characters long.',
   meta: 'Improve your online presence and increase your conversions through custom-made websites and high quality digital content. Contact us now!',
+  heroTop: 'AT V5 WE:',
+  heroDesign: 'DESIGN',
+  heroWebsites: 'WEBSITES',
+  heroBuild: 'BUILD',
+  heroApplications: 'APPLICATIONS',
+  heroWrite: 'WRITE',
+  heroWebContent: 'WEB CONTENT',
+  heroCreate: 'CREATE',
+  heroAwesomeBlogs: 'AWESOME BLOGS',
 };

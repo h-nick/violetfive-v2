@@ -44,4 +44,13 @@ export default {
   contactErrorReferral: 'El Referido es requerido.',
   contactErrorMessage: 'El Mensaje es requerido y debe tener al menos 15 caracteres.',
   meta: 'Mejora tu presencia online y eleva tus conversiones a través de sitios web hechos a la medida y contenido digital de calidad. ¡Todo al mejor precio del mercado - Contáctanos!',
+  heroTop: 'EN V5 NOSOTROS:',
+  heroDesign: 'DISEÑAMOS',
+  heroWebsites: 'SITIOS WEB',
+  heroBuild: 'CONSTRUIMOS',
+  heroApplications: 'APPS',
+  heroWrite: 'ESCRIBIMOS',
+  heroWebContent: 'CONTENIDO',
+  heroCreate: 'CREAMOS',
+  heroAwesomeBlogs: 'BLOGS GENIALES',
 };
