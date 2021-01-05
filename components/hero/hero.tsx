@@ -20,9 +20,12 @@ const Hero: FC<FCProps> = ({ show, showNavbar }) => {
 
   return (
     <div className={classes.root}>
-      <img className={classes.blob} src="/img/top_blob.svg" alt="Background blob design" />
+      <picture>
+        <source media="(min-width: 2048px)" srcSet="/img/top_blob_large.svg" />
+        <img className={classes.blob} src="/img/top_blob.svg" alt="Background blob design" />
+      </picture>
 
-      <Container className="py-5 pl-3 pl-md-5" fluid>
+      <Container className={clsx(classes.headings, 'py-5 pl-3 pl-md-5')} fluid>
         <Row>
           <Col>
             <div className={clsx(

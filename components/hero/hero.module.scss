@@ -40,6 +40,22 @@
       top: 0;
       right: 0;
     }
+
+    @media (min-width: 2048px) {
+      top: -12rem;
+      right: -10rem;
+    }
+
+    @media (min-width: 2800px) {
+      top: -12rem;
+      right: -8rem;
+    }
+  }
+
+  .headings {
+    @media(min-width: 2800px) {
+      margin-left: 20rem;
+    }
   }
 
   .navbar {
@@ -85,7 +101,7 @@
       }
     }
   }
-
+  
   h1 {
     color: white;
   }
