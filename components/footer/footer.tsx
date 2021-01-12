@@ -1,11 +1,18 @@
 import clsx from 'clsx';
 import { FC } from 'react';
+import Image from 'next/image';
 import classes from './footer.module.scss';
 
 const Footer: FC = () => (
   <div className={classes.root}>
     <div className={classes.inner}>
-      <img className={classes.logo} src="/img/logo.png" alt="VioletFive footer logo" />
+      <Image
+        className={classes.logo}
+        src="/img/logo.png"
+        alt="VioletFive footer logo"
+        width={250}
+        height={210}
+      />
 
       <h2 className="highlight mt-3">VIOLETFIVE</h2>
 

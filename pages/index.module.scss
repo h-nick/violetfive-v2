@@ -43,22 +43,6 @@
           white-space: nowrap;
         }
       }
-  
-      img {
-        width: 100%;
-        max-width: 500px;
-  
-        @media (min-width: 1200px) {
-          max-width: 800px;
-        }
-      }
-    }
-
-    .clients {
-      img {
-        width: 100%;
-        max-width: 200px;
-      }
     }
 
     .contact {

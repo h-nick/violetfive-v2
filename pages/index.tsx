@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useIntl } from 'react-intl';
 import clsx from 'clsx';
+import Image from 'next/image';
 import Hero from '../components/hero/hero';
 import Footer from '../components/footer/footer';
 import ServiceText from '../components/service_text/service_text';
@@ -76,14 +77,12 @@ const Home: FC = () => {
               <Row className={clsx(classes.about, 'align-items-center')}>
                 <Col xs={12} md={6}>
                   <div
-                    className={
-                    clsx(
+                    className={clsx(
                       classes.content,
                       classes.toanim,
                       classes.left,
                       textIsOnScreen[0] && classes.animate, 'm-auto',
-                    )
-                  }
+                    )}
                     ref={text1}
                   >
                     <h2>{t('aboutV5h')}</h2>
@@ -93,50 +92,58 @@ const Home: FC = () => {
                 </Col>
 
                 <Col xs={12} md={6}>
-                  <img
-                    className={
-                    clsx(
+                  <div
+                    className={clsx(
                       classes.toanim,
                       classes.right,
                       mockupIsOnScreen[0] && classes.animate,
                       'm-auto d-none d-md-block',
-                    )
-                  }
-                    src="/img/phones_mockup.png"
-                    alt=""
+                    )}
                     ref={image1}
-                  />
+                  >
+                    <Image
+                      src="/img/phones_mockup.png"
+                      alt=""
+                      width={791}
+                      height={980}
+                      priority
+                      quality={100}
+                    />
+                  </div>
                 </Col>
               </Row>
 
               <Row className={clsx(classes.about, 'align-items-center pt-4 pt-sm-5 mt-md-5 pt-md-5')}>
                 <Col xs={12} md={6}>
-                  <img
-                    className={
-                    clsx(
+                  <div
+                    className={clsx(
                       classes.toanim,
                       classes.down,
                       mockupIsOnScreen[1] && classes.animate,
                       'm-auto d-none d-sm-block pb-5 pb-md-0',
-                    )
-                  }
-                    src="/img/hero_mockups.png"
-                    alt=""
+                    )}
                     ref={image2}
-                  />
+                  >
+                    <Image
+                      src="/img/hero_mockups.png"
+                      alt=""
+                      width={1124}
+                      height={755}
+                      priority
+                      quality={100}
+                    />
+                  </div>
                 </Col>
 
                 <Col xs={12} md={6}>
                   <div
-                    className={
-                    clsx(
+                    className={clsx(
                       classes.content,
                       classes.toanim,
                       classes.right,
                       textIsOnScreen[1] && classes.animate,
                       'm-auto text-right pt-3 pt-md-0',
-                    )
-                  }
+                    )}
                     ref={text2}
                   >
                     <h2 className="text-align-right">{t('processh')}</h2>
@@ -187,37 +194,100 @@ const Home: FC = () => {
 
               <Row className="justify-content-center align-items-center">
                 <Col xs={3}>
-                  <img className="d-block mx-auto" src="/img/client1.png" alt="" />
+                  <Image
+                    className="d-block mx-auto"
+                    src="/img/client1.png"
+                    alt=""
+                    width={532}
+                    height={428}
+                    quality={95}
+                  />
                 </Col>
                 <Col xs={3}>
-                  <img className="d-block mx-auto" src="/img/client2.png" alt="" />
+                  <Image
+                    className="d-block mx-auto"
+                    src="/img/client2.png"
+                    alt=""
+                    width={368}
+                    height={102}
+                    quality={95}
+                  />
                 </Col>
                 <Col xs={3}>
-                  <img className="d-block mx-auto" src="/img/client3.png" alt="" />
+                  <Image
+                    className="d-block mx-auto"
+                    src="/img/client3.png"
+                    alt=""
+                    width={350}
+                    height={186}
+                    quality={95}
+                  />
                 </Col>
               </Row>
 
               <Row className="justify-content-center align-items-center mt-3">
                 <Col xs={3}>
-                  <img className="d-block mx-auto" src="/img/client4.png" alt="" />
+                  <Image
+                    className="d-block mx-auto"
+                    src="/img/client4.png"
+                    alt=""
+                    width={222}
+                    height={200}
+                    quality={95}
+                  />
                 </Col>
                 <Col xs={3}>
-                  <img className="d-block mx-auto" src="/img/client5.png" alt="" />
+                  <Image
+                    className="d-block mx-auto"
+                    src="/img/client5.png"
+                    alt=""
+                    width={273}
+                    height={127}
+                    quality={95}
+                  />
                 </Col>
                 <Col xs={3}>
-                  <img className="d-block mx-auto" src="/img/client6.png" alt="" />
+                  <Image
+                    className="d-block mx-auto"
+                    src="/img/client6.png"
+                    alt=""
+                    width={835}
+                    height={835}
+                    quality={95}
+                  />
                 </Col>
               </Row>
 
               <Row className="justify-content-center align-items-center mt-3">
                 <Col xs={3}>
-                  <img className="d-block mx-auto" src="/img/client7.png" alt="" />
+                  <Image
+                    className="d-block mx-auto"
+                    src="/img/client7.png"
+                    alt=""
+                    width={200}
+                    height={200}
+                    quality={95}
+                  />
                 </Col>
                 <Col xs={3}>
-                  <img className="d-block mx-auto" src="/img/client8.png" alt="" />
+                  <Image
+                    className="d-block mx-auto"
+                    src="/img/client8.png"
+                    alt=""
+                    width={430}
+                    height={435}
+                    quality={95}
+                  />
                 </Col>
                 <Col xs={3}>
-                  <img className="d-block mx-auto" src="/img/client9.png" alt="" />
+                  <Image
+                    className="d-block mx-auto"
+                    src="/img/client9.png"
+                    alt=""
+                    width={308}
+                    height={118}
+                    quality={95}
+                  />
                 </Col>
               </Row>
             </Container>

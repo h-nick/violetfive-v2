@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 import { useIntl } from 'react-intl';
 import threeBars from '@iconify/icons-codicon/three-bars';
+import Image from 'next/image';
 import Button from '../button/button';
 import classes from './hero.module.scss';
 import NavLinks from '../nav_links/nav_links';
@@ -30,11 +31,17 @@ const Hero: FC<FCProps> = ({ show, showNavbar }) => {
           <Col>
             <div className={clsx(
               classes.navbar,
-              'd-block d-lg-flex justify-content-lg-between align-items-lg-center',
+              'd-flex justify-content-lg-between align-items-lg-center',
             )}
             >
               <a href="/" title={t('navHomet')}>
-                <img className={classes.logo} src="/img/logo_white.png" alt="VioletFive logo" />
+                <Image
+                  className={classes.logo}
+                  src="/img/logo_white.png"
+                  alt="VioletFive logo"
+                  width={66}
+                  height={60}
+                />
               </a>
 
               <button

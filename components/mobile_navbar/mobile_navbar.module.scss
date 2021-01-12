@@ -13,49 +13,47 @@
   background: none;
   border: none;
 
-  .inner {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    
-    .navHeader {
-      img {
-        max-width: 150px;
+  .outer {
+    height: 90vh;
+    min-height: 580px;
+
+    .inner {
+      position: absolute;
+      left: 50%;
+      bottom: 10%;
+      transform: translateX(-50%);
+      
+      .closeButton {
+        border: 3px $gold solid;
+        border-radius: 100%;
+        padding: 0.4rem 0.8rem;
         margin: auto;
         display: block;
       }
-    }
-
-    .closeButton {
-      border: 3px $gold solid;
-      border-radius: 100%;
-      padding: 0.4rem 0.8rem;
-      margin: auto;
-      display: block;
-    }
-
-    .links {
-      display: block;
-      font-size: 1.222rem;
-    }
-
-    .links, button.links {
-      border-bottom: 3px $gold solid;
-      transition: all 500ms ease;
-      width: 100%;
-
-      @media (hover: hover) {
-        &:hover {
-          color: white;
-          border-color: white;
-          text-decoration: none;
-        }
+  
+      .links {
+        display: block;
+        font-size: 1.222rem;
       }
-
-      @media (hover: none) {
-        &:hover {
-          color: $gold;
-          text-decoration: none;
+  
+      .links, button.links {
+        border-bottom: 3px $gold solid;
+        transition: all 500ms ease;
+        width: 100%;
+  
+        @media (hover: hover) {
+          &:hover {
+            color: white;
+            border-color: white;
+            text-decoration: none;
+          }
+        }
+  
+        @media (hover: none) {
+          &:hover {
+            color: $gold;
+            text-decoration: none;
+          }
         }
       }
     }
