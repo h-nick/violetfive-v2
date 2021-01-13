@@ -11,6 +11,27 @@
     background: url('/img/top_bg_large.svg');
   }
 
+  .blogButton {
+    * {
+      transition: all 500ms ease;
+      color: #FFFFFF;
+    }
+
+    @media (hover: hover) {
+      text-decoration: none;
+
+      &:hover {
+        * {
+          color: $gold;
+        }
+      }
+    }
+
+    @media (hover: none) {
+      text-decoration: none;      
+    }
+  }
+
   .blob {
     display: none;
     transform: scale(0.8);

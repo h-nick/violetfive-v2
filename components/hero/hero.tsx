@@ -93,9 +93,11 @@ const Hero: FC<FCProps> = ({ show, showNavbar }) => {
                 text={t('button1')}
               />
               <Button
-                _onClick={show}
-                _className="mb-3 mr-3"
+                _className={clsx(classes.blogButton, 'mb-3 mr-3')}
                 text={t('button2')}
+                link
+                hoverType="none"
+                href="https://blog.violetfive.com"
               />
             </div>
           </Col>
