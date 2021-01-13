@@ -3,12 +3,15 @@
 .root {
   width: 195px;
   height: 55px;
-  background-color: $gold;
-  border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 500ms ease;
+
+  &.standard, &.color {
+    background-color: $gold;
+    border-radius: 15px;
+  }
 
   &.standard:hover {
     background-color: white;
