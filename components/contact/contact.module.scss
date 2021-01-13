@@ -1,6 +1,19 @@
 @import '../../styles/vars.scss';
 
 .root {
+  a {
+    font-weight: $bold;
+    color: $purple;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
   .title {
     border-left: $purple 10px solid;
     font-size: 1.5rem;

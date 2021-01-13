@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import { useIntl } from 'react-intl';
 import { useForm } from 'react-hook-form';
 import classes from './contact.module.scss';
+import CustomButton from '../button/button';
 
 interface FCProps {
   close: () => void,
@@ -51,8 +52,37 @@ const Contact: FC<FCProps> = ({ close, show }) => {
 
   return (
     <Modal show={show} onHide={close} className={classes.root}>
+      <Modal.Header closeButton>
+        <span className={clsx(classes.title, 'modal-title pl-3')}>{t('contactFormh1')}</span>
+      </Modal.Header>
+
+      <Modal.Body>
+        <p>{t('contactt1')}</p>
+        <CustomButton
+          _className="my-3"
+          hoverType="color"
+          link
+          href="https://wa.me/+584249090849"
+          text={t('whatsapp')}
+        />
+
+        <p>{t('contactt2')}</p>
+        <ul className="m-0 p-0">
+          <li className="mt-1">
+            <a href="tel://+584249090849">+58 (424) 909 0849</a>
+          </li>
+          <li className="mt-1">
+            <a href="tel://+584163955711">+58 (416) 395 5711</a>
+          </li>
+          <li className="mt-1">
+            <a href="tel://+584148749099">+58 (414) 874 9099</a>
+          </li>
+
+        </ul>
+      </Modal.Body>
+
       <Modal.Header>
-        <span className={clsx(classes.title, 'modal-title pl-3')}>{t('contactFormh')}</span>
+        <span className={clsx(classes.title, 'modal-title pl-3')}>{t('contactFormh2')}</span>
       </Modal.Header>
 
       <Modal.Body>
