@@ -1,5 +1,13 @@
 @import '../../styles/vars';
 
+a.root {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .root {
   width: 195px;
   height: 55px;
@@ -13,16 +21,18 @@
     border-radius: 15px;
   }
 
-  &.standard:hover {
-    background-color: white;
-  }
-
-  &.color:hover {
-    background-color: $purple;
-
-    .inner {
-      span, svg path {
-        color: white;
+  @media (hover: hover) {
+    &.standard:hover {
+      background-color: white;
+    }
+  
+    &.color:hover {
+      background-color: $purple;
+  
+      .inner {
+        span, svg path {
+          color: white;
+        }
       }
     }
   }

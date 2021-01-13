@@ -18,17 +18,11 @@
     }
 
     @media (hover: hover) {
-      text-decoration: none;
-
       &:hover {
         * {
           color: $gold;
         }
       }
-    }
-
-    @media (hover: none) {
-      text-decoration: none;      
     }
   }
 
