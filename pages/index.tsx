@@ -189,105 +189,114 @@ const Home: FC = () => {
               </Row>
             </Container>
 
-            <Container className={clsx(classes.clients, 'mt-5')}>
+            <Container className={clsx(classes.clients, 'mt-5 py-md-5')}>
               <h2 className="text-center mb-5">{t('clientsh')}</h2>
 
               <Row className="justify-content-center align-items-center">
                 <Col xs={3}>
-                  <Image
-                    className="d-block mx-auto"
-                    src="/img/client1.png"
-                    alt=""
-                    width={532}
-                    height={428}
-                    quality={95}
-                  />
+                  <div className="d-flex justify-content-center align-content-center px-lg-4">
+                    <Image
+                      src="/img/client1.png"
+                      alt=""
+                      width={222}
+                      height={200}
+                      quality={95}
+                    />
+                  </div>
                 </Col>
                 <Col xs={3}>
-                  <Image
-                    className="d-block mx-auto"
-                    src="/img/client2.png"
-                    alt=""
-                    width={368}
-                    height={102}
-                    quality={95}
-                  />
+                  <div className="d-flex justify-content-center align-content-center px-lg-4">
+                    <Image
+                      src="/img/client2.png"
+                      alt=""
+                      width={350}
+                      height={186}
+                      quality={95}
+                    />
+                  </div>
                 </Col>
                 <Col xs={3}>
-                  <Image
-                    className="d-block mx-auto"
-                    src="/img/client3.png"
-                    alt=""
-                    width={350}
-                    height={186}
-                    quality={95}
-                  />
-                </Col>
-              </Row>
-
-              <Row className="justify-content-center align-items-center mt-3">
-                <Col xs={3}>
-                  <Image
-                    className="d-block mx-auto"
-                    src="/img/client4.png"
-                    alt=""
-                    width={222}
-                    height={200}
-                    quality={95}
-                  />
-                </Col>
-                <Col xs={3}>
-                  <Image
-                    className="d-block mx-auto"
-                    src="/img/client5.png"
-                    alt=""
-                    width={273}
-                    height={127}
-                    quality={95}
-                  />
-                </Col>
-                <Col xs={3}>
-                  <Image
-                    className="d-block mx-auto"
-                    src="/img/client6.png"
-                    alt=""
-                    width={835}
-                    height={835}
-                    quality={95}
-                  />
+                  <div className="d-flex justify-content-center align-content-center px-lg-4">
+                    <Image
+                      src="/img/client3.png"
+                      alt=""
+                      width={694}
+                      height={525}
+                      quality={95}
+                    />
+                  </div>
                 </Col>
               </Row>
 
-              <Row className="justify-content-center align-items-center mt-3">
+              <Row className="justify-content-center align-items-center mt-5">
                 <Col xs={3}>
-                  <Image
-                    className="d-block mx-auto"
-                    src="/img/client7.png"
-                    alt=""
-                    width={200}
-                    height={200}
-                    quality={95}
-                  />
+                  <div className="d-flex justify-content-center align-content-center px-lg-4">
+                    <Image
+                      src="/img/client4.png"
+                      alt=""
+                      width={308}
+                      height={118}
+                      quality={95}
+                    />
+                  </div>
                 </Col>
                 <Col xs={3}>
-                  <Image
-                    className="d-block mx-auto"
-                    src="/img/client8.png"
-                    alt=""
-                    width={430}
-                    height={435}
-                    quality={95}
-                  />
+                  <div className="d-flex justify-content-center align-content-center px-lg-4">
+                    <Image
+                      src="/img/client5.png"
+                      alt=""
+                      width={368}
+                      height={102}
+                      quality={95}
+                    />
+                  </div>
                 </Col>
                 <Col xs={3}>
-                  <Image
-                    className="d-block mx-auto"
-                    src="/img/client9.png"
-                    alt=""
-                    width={308}
-                    height={118}
-                    quality={95}
-                  />
+                  <div className="d-flex justify-content-center align-content-center px-lg-4">
+                    <Image
+                      src="/img/client6.png"
+                      alt=""
+                      width={273}
+                      height={127}
+                      quality={95}
+                    />
+                  </div>
+                </Col>
+              </Row>
+
+              <Row className="justify-content-center align-items-center mt-5">
+                <Col xs={3}>
+                  <div className="d-flex justify-content-center align-content-center px-lg-4">
+                    <Image
+                      src="/img/client7.png"
+                      alt=""
+                      width={463}
+                      height={358}
+                      quality={95}
+                    />
+                  </div>
+                </Col>
+                <Col xs={3}>
+                  <div className="d-flex justify-content-center align-content-center px-lg-4">
+                    <Image
+                      src="/img/client8.png"
+                      alt=""
+                      width={272}
+                      height={129}
+                      quality={95}
+                    />
+                  </div>
+                </Col>
+                <Col xs={3}>
+                  <div className="d-flex justify-content-center align-content-center px-lg-4">
+                    <Image
+                      src="/img/client9.png"
+                      alt=""
+                      width={200}
+                      height={76}
+                      quality={95}
+                    />
+                  </div>
                 </Col>
               </Row>
             </Container>
