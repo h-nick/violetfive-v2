@@ -313,14 +313,7 @@ const Home: FC = () => {
                     <Button
                       hoverType="color"
                       _onClick={showModal}
-                      _className="mb-3 mr-3"
                       text={t('button1')}
-                    />
-
-                    <Button
-                      hoverType="color"
-                      _onClick={showModal}
-                      text={t('button2')}
                     />
                   </div>
                 </Col>
