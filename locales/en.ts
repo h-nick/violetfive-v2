@@ -17,7 +17,7 @@ export default {
   contacth: 'CONTACT US',
   contactp: 'Want to see our portafolio? Have doubts about our process? Want to inquire about additional products & services? Want to ask for a tailored offer? Contact us now! Send us a message, call us or write to our WhatsApp using the button below and we will get back to you as soon as possible!',
   button1: 'CONTACT US',
-  button2: 'CHECK OUR BLOG',
+  button2: 'VISIT OUR BLOG',
   contactFormh: 'Contact Us',
   contactFormName: 'Name (Required)',
   contactFormEmail: 'Email (Required)',
